@@ -1,0 +1,11 @@
+[Bb]in/
+[Dd]ebug/
+packages/
+.suo
+[Oo]bj/
+local.settings.json
+launchSettings.json
+.idea/
+.vs/
+.csproj.user
+
