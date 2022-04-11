@@ -9,7 +9,7 @@ namespace WebJobMsiTest
         // This function will get triggered/executed when a new message is written 
         // on an Azure Queue called queue.
         public static void ProcessQueueMessage(
-            [ServiceBusTrigger("process-queue", Connection = "tnm4f6f6rfa5qsbn_SERVICEBUS")]
+            [ServiceBusTrigger("process-queue", Connection = "sample_SERVICEBUS")]
             string message,
             ILogger log
         )
