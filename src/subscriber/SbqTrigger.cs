@@ -15,9 +15,9 @@ namespace Graeme
     public static class SbqTrigger
     {
         [FunctionName("SbqTrigger")]
-        [return: ServiceBus("intermediate-queue", Connection = "tnm4f6f6rfa5qsbn_SERVICEBUS")]
+        [return: ServiceBus("intermediate-queue", Connection = "sample_SERVICEBUS")]
         public static async Task<string> Run1(
-            [ServiceBusTrigger("process-queue", Connection = "tnm4f6f6rfa5qsbn_SERVICEBUS")]
+            [ServiceBusTrigger("process-queue", Connection = "sample_SERVICEBUS")]
             Message[] messages,
             MessageReceiver messageReceiver,
             ILogger log)
@@ -34,7 +34,7 @@ namespace Graeme
 
         [FunctionName("SbqTrigger2")]
         public static async Task Run2(
-            [ServiceBusTrigger("intermediate-queue", Connection = "tnm4f6f6rfa5qsbn_SERVICEBUS")]
+            [ServiceBusTrigger("intermediate-queue", Connection = "sample_SERVICEBUS")]
             Message message,
             ILogger log)
         {
@@ -57,4 +57,3 @@ namespace Graeme
         public Guid Id { get; set; }
         public int Value { get; set; }
     }
-}

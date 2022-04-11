@@ -1,5 +1,5 @@
 var random = uniqueString(resourceGroup().name)
-var location = resourceGroup().location
+var location = 'AustraliaEast'
 
 resource asp 'Microsoft.Web/serverfarms@2021-03-01' = {
   name: '${random}-asp'
@@ -82,7 +82,7 @@ resource site 'Microsoft.Web/sites@2021-03-01' = {
           value: appinsights.properties.InstrumentationKey
         }
         {
-          name: 'tnm4f6f6rfa5qsbn_SERVICEBUS__fullyQualifiedNamespace'
+          name: 'sample_SERVICEBUS__fullyQualifiedNamespace'
           value: '${servicebus.name}.servicebus.windows.net'
         }
       ]
@@ -103,7 +103,7 @@ resource website 'Microsoft.Web/sites@2021-03-01' = {
       use32BitWorkerProcess: true
       appSettings: [
         {
-          name: 'tnm4f6f6rfa5qsbn_SERVICEBUS__fullyQualifiedNamespace'
+          name: 'sample_SERVICEBUS__fullyQualifiedNamespace'
           value: '${servicebus.name}.servicebus.windows.net'
         }
         {
